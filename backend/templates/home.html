@@ -10,7 +10,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body{
             background: #0f172a;
@@ -57,40 +57,103 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark px-4 py-3">
-    <h3>FraudShield</h3>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
 
+        <a class="navbar-brand fw-bold" href="/">
+            FraudShield
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/transactions/">
+                        Transactions
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/add/">
+                        Add Transaction
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Analytics
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Help
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
 <div class="container mt-5">
 
-    <h1 class="mb-4">Fraud Detection Dashboard</h1>
+    <div class="row g-4 justify-content-center">
 
-    <div class="row g-4">
-
+        <!-- Total Transactions -->
         <div class="col-md-4">
-            <div class="card-box total">
+            <div class="card text-center shadow-lg border-0 rounded-4 p-4 bg-primary text-white">
+
                 <h4>Total Transactions</h4>
-                <div class="number">{{ total }}</div>
+
+                <h1 class="display-4 fw-bold">
+                    {{ total }}
+                </h1>
+
             </div>
         </div>
 
+        <!-- Fraud Transactions -->
         <div class="col-md-4">
-            <div class="card-box fraud">
-                <h4>Fraud Transactions</h4>
-                <div class="number">{{ fraud }}</div>
+            <div class="card text-center shadow-lg border-0 rounded-4 p-4 bg-danger text-white">
+
+                <h4>Unsafe Transactions</h4>
+
+                <h1 class="display-4 fw-bold">
+                    {{ fraud }}
+                </h1>
+
             </div>
         </div>
 
+        <!-- Safe Transactions -->
         <div class="col-md-4">
-            <div class="card-box safe">
+            <div class="card text-center shadow-lg border-0 rounded-4 p-4 bg-success text-white">
+
                 <h4>Safe Transactions</h4>
-                <div class="number">{{ safe }}</div>
+
+                <h1 class="display-4 fw-bold">
+                    {{ safe }}
+                </h1>
+
             </div>
         </div>
 
     </div>
 
 </div>
-
-</body>
-</html>
