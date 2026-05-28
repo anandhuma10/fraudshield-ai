@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Transactions</h1>
+
+{% for transaction in transactions %}
+
+<div class="card">
+
+    <h3>{{ transaction.transaction_id }}</h3>
+
+    <p>
+        {{ transaction.sender_name }}
+        →
+        {{ transaction.receiver_name }}
+    </p>
+
+    <p>₹ {{ transaction.amount }}</p>
+
+    <p>{{ transaction.location }}</p>
+
+    {% if transaction.is_fraud %}
+
+        <p class="fraud">
+            Fraud Transaction
+        </p>
+
+    {% else %}
+
+        <p class="safe">
+            Safe Transaction
+        </p>
+
+    {% endif %}
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

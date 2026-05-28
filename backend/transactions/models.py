@@ -1,8 +1,9 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
 
+
+from django.db import models
 
 class Transaction(models.Model):
 
@@ -27,15 +28,9 @@ class Transaction(models.Model):
 
     location = models.CharField(max_length=100)
 
-    device_id = models.CharField(max_length=200)
-
-    ip_address = models.GenericIPAddressField()
-
-    timestamp = models.DateTimeField(auto_now_add=True)
-
     is_fraud = models.BooleanField(default=False)
 
-    fraud_score = models.FloatField(default=0.0)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.transaction_id
