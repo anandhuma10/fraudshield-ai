@@ -2,5 +2,16 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.assistant_home, name='assistant_home'),
+
+    path(
+        '',
+        views.chat_page,
+        name='chat_page'
+    ),
+
+    path(
+        'chat/',
+        views.chatbot,
+        name='chatbot'
+    ),
 ]
