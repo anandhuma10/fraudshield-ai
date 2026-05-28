@@ -26,4 +26,5 @@ urlpatterns = [
         'ai-assistant/',
         include('ai_assistant.urls')
     ),
+    path('', include('fraud_detection.urls')),
 ]
