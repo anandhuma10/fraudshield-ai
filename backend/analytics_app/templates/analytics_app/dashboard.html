@@ -1,13 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Analytics Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Analytics Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body{
+            background:#f4f6f9;
+        }
+
+        .dashboard-title{
+            font-weight:bold;
+            margin-bottom:30px;
+        }
+
+        .card{
+            border:none;
+            border-radius:15px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .icon{
+            font-size:40px;
+        }
+
+        .card h2{
+            font-weight:bold;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Fraud Analytics Dashboard</h1>
+<div class="container py-5">
 
-<p>Analytics page working successfully.</p>
+    <h1 class="dashboard-title text-center">
+        Fraud Analytics Dashboard
+    </h1>
+
+    <div class="row g-4">
+
+        <!-- Total Transactions -->
+        <div class="col-md-4">
+            <div class="card p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Total Transactions</h5>
+                        <h2>12,450</h2>
+                    </div>
+
+                    <i class="bi bi-cash-stack text-primary icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fraud Detected -->
+        <div class="col-md-4">
+            <div class="card p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Fraud Detected</h5>
+                        <h2>245</h2>
+                    </div>
+
+                    <i class="bi bi-shield-exclamation text-danger icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Safe Transactions -->
+        <div class="col-md-4">
+            <div class="card p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Safe Transactions</h5>
+                        <h2>12,205</h2>
+                    </div>
+
+                    <i class="bi bi-check-circle text-success icon"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Recent Alerts -->
+    <div class="card mt-5 p-4">
+        <h3 class="mb-3">
+            <i class="bi bi-bell-fill text-warning"></i>
+            Recent Fraud Alerts
+        </h3>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>#TXN1023</td>
+                    <td>$5000</td>
+                    <td>
+                        <span class="badge bg-danger">
+                            Fraud
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>#TXN1045</td>
+                    <td>$120</td>
+                    <td>
+                        <span class="badge bg-success">
+                            Safe
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>#TXN1088</td>
+                    <td>$8200</td>
+                    <td>
+                        <span class="badge bg-danger">
+                            Fraud
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
 
 </body>
 </html>
